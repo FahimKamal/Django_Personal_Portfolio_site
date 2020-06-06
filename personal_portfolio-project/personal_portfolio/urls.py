@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+
+# This 2 imports is added so I can see uploaded images from my adminpage.
 from django.conf.urls.static import static
 from django.conf import settings
 
@@ -22,4 +24,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 ]
 
+# This line is added so I can see uploaded images from my adminpage.
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

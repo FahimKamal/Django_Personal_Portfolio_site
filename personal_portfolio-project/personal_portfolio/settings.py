@@ -121,5 +121,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# This line is added so I can see uploaded images from my adminpage.
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
