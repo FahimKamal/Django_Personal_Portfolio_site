@@ -12,12 +12,12 @@ class BlogView(ListView):
     # The code bellow will grap latest 2 post from all other posts in batabase.
     queryset = Blog.objects.order_by('-date')[:2]
 
-    def get_queryset(self):
-        return Blog.objects.order_by('-date')[:2]
-
-    def get_context_data(self, *, object_list=None, **kwargs):
-        """With This I can get objects from multiple models"""
-        context = super().get_context_data(**kwargs)
-        context['projects'] = Project.objects.all()
-        return context
+    # def get_queryset(self):
+    #     return Blog.objects.order_by('-date')[:2]
+    #
+    # def get_context_data(self, *, object_list=None, **kwargs):
+    #     """With This I can get objects from multiple models"""
+    #     context = super().get_context_data(**kwargs)
+    #     context['projects'] = Project.objects.all()
+    #     return context
 
