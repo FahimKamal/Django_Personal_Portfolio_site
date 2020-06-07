@@ -25,6 +25,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.HomePage.as_view(), name='homepage'),
     path('portfolio/', include('portfolio.urls', namespace='portfolio')),
+    path('blog/', include('blog.urls', namespace='blog')),
 ]
 
 # This line is added so I can see uploaded images from my adminpage.
