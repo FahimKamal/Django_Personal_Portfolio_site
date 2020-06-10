@@ -3,22 +3,54 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Base</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Fahim Kamal Ahmed</title>
     {# Bootstrap CSS #}
     <link rel="stylesheet" href="{% static 'bootstrap/bootstrap_4.5.0.min.css' %}">
+    <link rel="icon" type="image/png" href="{% static 'Logo.png' %}">
+    <link rel="stylesheet" href="{% static "master.css" %}">
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
   </head>
   <body>
-    <div class="container">
-      <h1>I'm from base.html</h1>
-      
+
+      <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <div class="container">
+          <a class="navbar-brand" href="{% url 'homepage' %}">
+            <img src="{% static "Logo.png" %}" width="30" height="30" class="d-inline-block align-top" alt="Nick's Logo">
+            <span>Fahim Kamal Ahmed</span>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse text-center" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="{% static "portfolio/database_assignment.pdf" %}" target="_blank">Resume</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://www.facebook.com/fahimkamal63" target="_blank">Facebook</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://github.com/FahimKamal" target="_blank">Github</a>
+              </li>
+              <li>
+                <a role="button" href="{% url 'blog:blog' %}" class="btn btn-primary">Blog</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
       {% block content %}
         {# contents from other html files of gonna be here. #}
       {% endblock %}
-    </div>
+
   </body>
   {# Bootstrap .js files start #}
   <script type="text/javascript" src="{% static 'bootstrap/jquery-3.5.1.slim.min.js' %}"></script>
   <script type="text/javascript" src="{% static 'bootstrap/popper.min.js' %}"></script>
   <script type="text/javascript" src="{% static 'bootstrap/bootstrap.min.js' %}"></script>
   {# Bootstrap .js files end #}
+
+  {# online bootstrap .js files  #}
 </html>

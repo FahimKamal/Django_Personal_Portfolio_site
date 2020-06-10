@@ -121,6 +121,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# To access the static files from project level bellow list has to be added.
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
+
 # This line is added so I can see uploaded images from my adminpage.
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView
 from .models import Blog
 from portfolio.models import Project
@@ -10,7 +10,7 @@ class BlogView(ListView):
     model = Blog
     context_object_name = 'blogs'
     # The code bellow will grap latest 2 post from all other posts in batabase.
-    queryset = Blog.objects.order_by('-date')[:2]
+    # queryset = Blog.objects.order_by('-date')[:2]
 
     # def get_queryset(self):
     #     return Blog.objects.order_by('-date')[:2]
@@ -21,3 +21,7 @@ class BlogView(ListView):
     #     context['projects'] = Project.objects.all()
     #     return context
 
+
+def detail(request, blog_id):
+    blog = get_object_or_404(Blog, pk=blog_id)
+    return render(request, 'blog/detail.html', {'blog': blog})
